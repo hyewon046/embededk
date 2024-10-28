@@ -39,11 +39,16 @@ public static void main(String[] args) {
 		// 3은 int타입이라 Integer타입에 할당해야함
 		// 자동으로 3이 new Integer(3)이 된다 => auto wrapping
 		Integer i2 = 3;
+		/*int i1=3; 
+		Integer i2 = new Integer(i1);*/ //확실치않음
+		
 		
 		// auto unwrapping : unwrapping이 자동으로 일어남
 		// i2는 Integer타입이므로 +연산을 위해서 i2가 가진 3을 자동으로 꺼냄
 		// i2.intValue(3) 연산이 자동으로 수행됨 => auto unwrapping
+		//int result = i2.intValue() + 5;
 		int result = i2 + 5;
+		System.out.println(result);
 		
 	}
 

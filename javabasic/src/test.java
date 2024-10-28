@@ -13,12 +13,12 @@ public class test {
 		System.out.println("두수의 곱 : " + c*d);*/
 		test num = new test();
 		System.out.println("문자열입력: " );
-		String str = one.next();
+		String str1 = one.next();
 		String str2 = one.nextLine();
 		String str3 = one.nextLine();
 		boolean d = one.nextBoolean();
 		System.out.println("갯수 :" + count(d));
-		
+		one.close();
 		
 		
 		/*test student1 = new test();

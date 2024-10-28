@@ -19,6 +19,7 @@ public class Test4 {
 			scorecount ++;
 		}
 		System.out.println("총" + scorecount + "번 입니다.");
+		sc.close();
 
 	}
 

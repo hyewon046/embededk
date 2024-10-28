@@ -30,7 +30,7 @@ public class Test3 {
 			System.out.println("A");
 		}
 		else {System.out.println("잘못된 점수입니다.");}
-		
+		sc.close();
 
 	}
 } 

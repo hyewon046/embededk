@@ -14,6 +14,8 @@ public class Test2 {
 		else if (i1+i2 <=10) {
 			System.out.println("10보다 크지않다.");
 		}
+		
+		sc.close();
 
 	}
 

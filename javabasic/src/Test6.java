@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Test6 { //switch문으로 달별 계절표현하기
+public class Test6 { //switch 문으로 달별 계절표현하기
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
@@ -46,6 +46,7 @@ public class Test6 { //switch문으로 달별 계절표현하기
 		default:
 			System.out.println("잘못입력하셨습니다.");
 		}
+		sc.close();
 	
 }
 	}

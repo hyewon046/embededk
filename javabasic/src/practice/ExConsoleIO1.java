@@ -1,4 +1,4 @@
-package javabasic;
+package practice;
 
 import java.util.Scanner;
 

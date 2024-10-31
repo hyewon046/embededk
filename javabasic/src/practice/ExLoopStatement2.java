@@ -1,4 +1,4 @@
-package javabasic;
+package practice;
 
 public class ExLoopStatement2 { //별찍기
 

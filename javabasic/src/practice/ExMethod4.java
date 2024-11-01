@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class ExMethod4 {
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		int i = sc.nextInt();
-		output(i);
-		
-		sc.close();
+	
+		printstar(input());
 	}
 	//입력
+	static int input() {
+		Scanner sc = new Scanner(System.in);
+		return sc.nextInt();
+	}
 //	static int star(int a) {
 //		Scanner sc = new Scanner(System.in);
 //		a = sc.nextInt();
@@ -19,11 +20,11 @@ public class ExMethod4 {
 //	}
 	
 	//출력
-	static void output(int a) {
+	static void printstar(int starcount) {
 		//ExMethod4 sstar = new ExMethod4();
 		//int k = ExMethod4.star(5); //객체생성해서 메소드호출하려고함
-		for (int i=0; i< a ; i++) { 
-			for(int j=0; j<=i; j++ ) { 
+		for (int i=0; i< starcount ; i++) { 
+			for(int j=0; j<i+1; j++ ) { 
 				System.out.print("*");
 			}
 			System.out.println(); 

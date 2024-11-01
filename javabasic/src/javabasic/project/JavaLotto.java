@@ -1,7 +1,7 @@
 package javabasic.project;
 
 import java.util.Scanner;
-import java.util.StringTokenizer;
+//import java.util.StringTokenizer;
 
 // Java Lotto : 개인 JAVA 프로젝트
 //[ Lotto 프로그램 구현 ]
@@ -30,7 +30,8 @@ public class JavaLotto {
 		
 		System.out.println("로또번호 6개를 입력해주세요!");
 		input();
-		
+		System.out.println("이번 추첨번호는");
+		choice();
 		// 랜덤정수 추출
 		// Math.random() : 0.0<=n<1.0 범위의 실수를 반환
 		//int randomNumber = (int)(Math.random()*45)+1; //1~45
@@ -60,10 +61,30 @@ public class JavaLotto {
 		int[] inputNum = {0,0,0,0,0,0};
 		int inputNumLength = inputNum.length;
 		for (int i=0; i<inputNumLength; i++) {
-			inputNum[i] = sc.nextInt(); //중복없이 입력되었는지 확인필요
+			inputNum[i] = sc.nextInt();
 			System.out.println(inputNum[i]);
+//			if(inputNum[i]==inputNum[j] || inputNum[i] > 45) {
+//					System.out.println("중복되는 수이거나 45가 넘는 숫자는 불가합니다.");} //이렇게넣으면 for문 안에서 여러번 실행되어서 여러줄이뜸
+		} 
+	}//input
+	
+	
+	//랜덤뽑기
+	static void choice() {
+		int[] randomNum = {0,0,0,0,0,0,0};
+		for(int j=0; j<7; j++) {
+		randomNum[j] = (int)(Math.random()*45)+1;
+		System.out.println(randomNum[j]); //중복없게 추가
 		}
 	}
+	
+	//등수정하기
+	static void result() {
+		
+	} 
+	
+	//출력하기
+
 
 }//class
 
@@ -73,3 +94,4 @@ public class JavaLotto {
 //(3. 중복없는지 체크)
 //4. 번호에 따른 등수 정하기
 //5. 출력하기
+// 

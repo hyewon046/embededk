@@ -1,5 +1,6 @@
 package javabasic.project;
 
+import java.util.Arrays;
 import java.util.Scanner;
 //import java.util.StringTokenizer;
 
@@ -27,71 +28,68 @@ import java.util.Scanner;
 public class JavaLotto {
 
 	public static void main(String[] args) {
-		
-		System.out.println("로또번호 6개를 입력해주세요!");
-		input();
-		System.out.println("이번 추첨번호는");
-		choice();
-		// 랜덤정수 추출
-		// Math.random() : 0.0<=n<1.0 범위의 실수를 반환
-		//int randomNumber = (int)(Math.random()*45)+1; //1~45
-			
-		// 스캐너 생성
-		//Scanner sc = new Scanner(System.in);
-		
-		// 한 라인의 문자열 입력
-		//String line= sc.nextLine();
-
-		// 문자열을 공백문자 기준으로 토크나이징(토큰으로 분리)
-		//StringTokenizer st = new StringTokenizer(line);
-		
-		// 토큰이 있는 동안 반복
-//		while(st.hasMoreTokens()) {
-//			// 토큰 하나씩 가져와서 출력
-//			String token = st.nextToken();
-//			System.out.println(token);
-//		}
-//		sc.close();
-		
-
-	}//main
-	//번호 입력
-	static void input() {
-		Scanner sc = new Scanner(System.in);
 		int[] inputNum = {0,0,0,0,0,0};
+		int[] randomNum = {0,0,0,0,0,0,0};
+//		int bonusNum = 0;
+		print(inputNum, randomNum);
+	
+	}//main
+	
+	//번호 입력받기
+	static void input(int[] inputNum) {
+		Scanner sc = new Scanner(System.in);
 		int inputNumLength = inputNum.length;
 		for (int i=0; i<inputNumLength; i++) {
 			inputNum[i] = sc.nextInt();
 			System.out.println(inputNum[i]);
-//			if(inputNum[i]==inputNum[j] || inputNum[i] > 45) {
-//					System.out.println("중복되는 수이거나 45가 넘는 숫자는 불가합니다.");} //이렇게넣으면 for문 안에서 여러번 실행되어서 여러줄이뜸
+			for(int j=0; j<i; j++) {
+				if(inputNum[i]==inputNum[j]) {
+					System.out.println("중복되는 숫자는 불가합니다.");} 
+			}
 		} 
-	}//input
+	}
 	
 	
 	//랜덤뽑기
-	static void choice() {
-		int[] randomNum = {0,0,0,0,0,0,0};
-		for(int j=0; j<7; j++) {
-		randomNum[j] = (int)(Math.random()*45)+1;
-		System.out.println(randomNum[j]); //중복없게 추가
-		}
+	static void choice(int[] randomNum) {
+		for(int i=0; i<7; i++) {	
+			randomNum[i] = (int)(Math.random()*45)+1;
+			for(int j=0; j<i; j++) {
+				if(randomNum[i] == randomNum[j]) {
+					i--;
+				}
+			}
+		} System.out.println(Arrays.toString(randomNum));
 	}
 	
-	//등수정하기
-	static void result() {
-		
+	//등수 정하기
+	static void result(int[] inputNum, int[] randomNum) {
+		int count = 0; //일치하는 갯수
+//		for (int i=0; i<7; i++) {
+//			for (int j=0; j<i; j++) {
+//				if(randomNum[i]==inputNum[j]) {
+//					count++;
+//				}
+//			}
+//		}
+//		switch(count) {
+//		case 6: System.out.println("1등!");
+//		case 5: System.out.println("2등!");
+//		case 4: System.out.println("4등!");
+//		case 3: System.out.println("5등!");
+//		case 2: System.out.println("꽝! 다음기회에");
+//		case 1: System.out.println("꽝! 다음기회에");
+//		case 0: System.out.println("꽝! 다음기회에");
+//		}
 	} 
 	
 	//출력하기
-
-
+	static void print(int[] inputNum, int[] randomNum) {
+		System.out.println("로또번호 6개를 입력해주세요!");
+		input(inputNum);
+		System.out.println("\n"+"이번 추첨번호는");
+		choice(randomNum);
+		System.out.println("\n"+"축하합니다!");
+		result(inputNum, randomNum);
+	}
 }//class
-
-//내가 정한 순서
-//1. 정수입력받기(중복없게 조건걸기)
-//2. 정수 랜덤뽑기(중복없게 조건걸어서)
-//(3. 중복없는지 체크)
-//4. 번호에 따른 등수 정하기
-//5. 출력하기
-// 

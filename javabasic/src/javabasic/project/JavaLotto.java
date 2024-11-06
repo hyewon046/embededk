@@ -21,7 +21,7 @@ public class JavaLotto {
 			System.out.println(inputNum[i]);
 			for(int j=0; j<i; j++) {
 				if(inputNum[i] == inputNum[j] || inputNum[i] > 45) {
-					i--; }
+					i=-1; System.out.println("다시 입력해주세요!");}
 			}
 		}
 	}
@@ -40,8 +40,6 @@ public class JavaLotto {
 	}
 	
 	//등수 정하기
-	//인덱스 0~5까지 일치하는거 찾고  random의 6번째와 일치한다면 bonus +1
-	//등수설정하기
 	static void getscore(int[] inputNum, int[] randomNum) {
 		int count =0; 
 		int bonus = 0;
@@ -73,6 +71,7 @@ public class JavaLotto {
 		input(inputNum);
 		System.out.println("\n"+"이번 추첨번호는");
 		getNum(randomNum);
+		System.out.println("보너스번호는 " + randomNum[6]);
 		System.out.println("\n"+"축하합니다!");
 		getscore(inputNum, randomNum);
 	}

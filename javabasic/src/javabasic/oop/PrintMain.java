@@ -7,7 +7,7 @@ public class PrintMain {
 		//잉크젯프린터 하나 생성해서 켜고, 프린트하고, 끄기
 		
 		//인터페이스를 구현한 클래스의 객체를 생성하면 "항상" 인터페이스타입 참조변수를 사용한다.
-		//WHY? 프로그램 구현이 유연하고 확장성 잇어 진다.
+		//WHY? 프로그램 구현이 유연하고 확장성 있어 진다.
 		//InkJetPrinter inkjet = new InkJetPrinter("삼성", "S820", 3000); (X) 클래스타입 참조변수사용한것
 		IPrinter inkjet = new InkJetPrinter("삼성", "S820", 3000); //**최상위타입으로 받기
 //		inkjet.turnOn(); //메소드 호출
@@ -42,7 +42,7 @@ public class PrintMain {
 		
 		//80점정도~
 		for (int i =0; i<iprinterArrLeng; i++) {
-			if (iprinterArr[i] instanceof InkJetPrinter) {
+			if (iprinterArr[i] instanceof InkJetPrinter) { //iprinterArr이 InkJetPrinter클래스의 타입인지 확인하는 연산
 				System.out.print("잉크젯프린터(");
 			} else if (iprinterArr[i] instanceof RazorPrinter){
 				System.out.print("레이저프린터(");
@@ -53,16 +53,16 @@ public class PrintMain {
 		//toString() 오버라이딩을 이용해보자
 		//company, name, price 는 AbstractPrinter가 가지고있다.
 		//그러므로 AbstractPrinter에 toString()을 오버라이딩하자
-		for (IPrinter iprinter : iprinterArr) {
-			System.out.println((AbstractPrinter)iprinter);
+		for (IPrinter iprinter : iprinterArr) { //배열의 향상된 for문
+			System.out.println((AbstractPrinter)iprinter); //오버라이딩한 toString()을 가져와야하므로 하위형변환사용
 		}
 		
 	} //main
 	
 	//상위형변환, 하위형변환 모두 활용, 80점코드에 사용
 	static void print(IPrinter iprinter) {
-		System.out.print(((AbstractPrinter)iprinter).company);
-		System.out.print(" ,");
+		System.out.print(((AbstractPrinter)iprinter).company); //company는 AbstractPrinter클래스에 선언되었고,
+		System.out.print(" ,");                                            //IPrinter는 갖고있지않기때문에 하위형변환이 실행됨
 		System.out.print(((AbstractPrinter)iprinter).name);
 		System.out.print(" ,");
 		System.out.print(((AbstractPrinter)iprinter).price);

@@ -1,12 +1,12 @@
 package javabasic.oop;
 
-public abstract class AbstractPrinter implements IPrinter {
+public abstract class AbstractPrinter implements IPrinter { //추상클래스
 	
-	String company;
+	String company; //변수선언
 	String name;
 	int price;
 
-	public AbstractPrinter(String company, String name, int price) {
+	public AbstractPrinter(String company, String name, int price) { //생성자생성
 		this.company = company;
 		this.name = name;
 		this.price = price;
@@ -30,7 +30,7 @@ public abstract class AbstractPrinter implements IPrinter {
 	
 	@Override
 	public String toString() {
-		return sort + "(" + company + ", " + name+ ", " + "price" + ")";
+		return sort + "(" + company + ", " + name+ ", " + price + ")";
 	}
 
 }

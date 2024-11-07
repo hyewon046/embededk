@@ -9,7 +9,5 @@ public interface IPrinter {
 	public abstract void turnOn(); 
 	public abstract void print(); 
 	public abstract void turnOff();
-	
-	
-
+																									
 }

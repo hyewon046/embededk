@@ -2,12 +2,9 @@ package javabasic.project;
 
 public class LottoMachine {
 	
-	LottoMachine lottomachine = new LottoMachine();
+	int[] randomNum = new int[7];
 	
-	public void selectNum() {
-		 
-		
-	}
 	
+
 
 }

@@ -9,6 +9,12 @@ import java.io.IOException;
 public class APIExtra10 {
 
 	public static void main(String[] args) {
+		//영단어 나누기 (공백, 기호기준?)
+		//단어 길이 순서대로 정렬하기?
+		//맨앞과 맨뒤 반환하기?
+		//개수구하기
+		
+		
 		
 		
 

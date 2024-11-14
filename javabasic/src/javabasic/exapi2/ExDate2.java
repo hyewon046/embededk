@@ -13,11 +13,12 @@ public class ExDate2 {
 		System.out.println("연도 : " + year + ", 월 :"+  month);
 		
 		Calendar cal = Calendar.getInstance();
+		cal.set(year, month+1, 1);
 		
-		
-				
-		
+			int firstday=(Calendar.DAY_OF_WEEK);
+			int lastday=cal.getActualMaximum(Calendar.DATE);
 
+	
 	}
 
 }

@@ -8,7 +8,7 @@ public class JavaLotto_oop {
 		
 		Scanner sc = new Scanner(System.in);
 		
-		LottoBall lottoball;
+
 		
 		
 	}

@@ -9,18 +9,23 @@ public class ExDate1 {
 		
 		Calendar cal = Calendar.getInstance();
 		String korea;
+		
 		cal.setTimeZone(TimeZone.getTimeZone("Asia/Seoul"));
 		printDate("한국", cal);
 		
 //		TimeZone gb = TimeZone.getTimeZone("Europe/London");
 //		cal.setTimeZone(gb);
+		
 		cal.setTimeZone(TimeZone.getTimeZone("Europe/London"));
 		printDate("영국", cal);
+		
 		cal.setTimeZone(TimeZone.getTimeZone("America/Los Angeles"));
 		printDate("미국", cal);
+		
 		cal.setTimeZone(TimeZone.getTimeZone("Austrailia/Sydney"));
 		printDate("호주", cal);
 	}
+	
 	
 	public static void printDate(String name, Calendar cal) {
 		System.out.println(

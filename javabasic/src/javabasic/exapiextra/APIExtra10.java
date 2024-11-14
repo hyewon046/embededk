@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Array;
 
 public class APIExtra10 {
 
@@ -15,6 +16,16 @@ public class APIExtra10 {
 		//맨앞과 맨뒤 반환하기?
 		//개수구하기
 		
+		char[] chrArr = getText().toCharArray();
+		int[] countArr = new int[2];
+
+		for (char ch : chrArr) {
+			String str = String.valueOf(ch);
+//			if (str.contains("[가-힣] || [\\w_]") {
+//					//삭제한다
+//			} Array.sort(str);
+		}
+		System.out.println("가장 긴 단어는" + chrArr[chrArr.length-1] +"이고, 가장 짧은 단어는 " + chrArr[0] + "이다.");
 		
 		
 		

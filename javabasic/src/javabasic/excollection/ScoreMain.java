@@ -13,7 +13,7 @@ public class ScoreMain {
 		
 		List<Student> studentinfo = new ArrayList<Student>();
 		for (int i =0; i<3; i++) {
-			studentinfo.add(new Student(sc.next(), sc.nextInt(), sc.nextInt(), sc.nextInt()));
+//			studentinfo.add(new Student(sc.next(), sc.nextInt(), sc.nextInt(), sc.nextInt()));
 		}
 
 		

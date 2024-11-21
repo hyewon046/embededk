@@ -93,7 +93,7 @@ public class PokerMain {
 		else if (PokerRule.isTriple(player)) resultStr = "[트리플]";
 		else if (PokerRule.isTwoPair(player)) resultStr = "[투 페어]";
 		else if (PokerRule.isOnePair(player)) resultStr = "[원 페어]";
-		else resultStr = "[족보 없음]" +", 하이카드 : " + PokerRule.highCard(player); //하이카드가 10이하일때 숫자로 나오고 있는지 해결을 못함
+		else resultStr = "[족보 없음]" +", 하이카드 : " + PokerRule.highCard(player);
 	}
 
 }//class

@@ -22,10 +22,16 @@ public class ExCharStream {
 			writer.flush();
 			
 			reader = new FileReader(file);
-			//System.out.println(String.valueOf((char)reader.read()));
-			BufferedReader br = new BufferedReader(new FileReader(file)); //버퍼를 안쓰고 할 수 있는 방법이 있을까.,,..
-			System.out.println(br.readLine());
+			System.out.print((char)reader.read());
+			System.out.print((char)reader.read());
+			System.out.print((char)reader.read());		
 			
+			/* 2) 이러한방법도 있다
+			int i = 0;
+			while((i=reader.read()) > -1) {
+				System.out.print((char)i);
+			}
+			*/
 			
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

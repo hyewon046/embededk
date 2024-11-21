@@ -27,18 +27,23 @@ public class ExConvBufferStream {
 			writer.flush();
 			
 			reader = new FileReader(file);
-//			reader.read();
-//			System.out.println((char)reader.read());
-			br = new BufferedReader(new FileReader(file));
-			System.out.println(br.readLine());
-			
-			
+			int i = 0;
+			while ((i=reader.read()) > -1) { //선생님
+				System.out.print((char)i);
+			}
+////			reader.read();
+////			System.out.println((char)reader.read());
+//			br = new BufferedReader(new FileReader(file));
+//			System.out.println(br.readLine());
+//			
+//			
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		} finally {
 			try {
 				reader.close();
 				writer.close();
+				sc.close();
 			} catch(IOException ioe) {
 				ioe.printStackTrace();
 			}

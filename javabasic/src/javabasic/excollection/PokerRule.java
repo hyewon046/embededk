@@ -10,9 +10,6 @@ public class PokerRule {
 	
 	String rank;
 	
-	//상수
-	public static final int CARDLIST_NUM = 7;
-	
 	//로얄스트레이트플러쉬 여부 : 연속된 5개의 숫자(10~14)이고 5개가 동일한 모양
 	public static boolean isRoyalStraightFlush(Player player) {
 		return isRoyalStraight(player) && isFlush(player);

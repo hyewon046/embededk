@@ -39,7 +39,7 @@ public class ImageCopyer {
 			int readByte = 0;
 			while ((readByte = is.read(buffer)) >-1) {
 				os.write(buffer, 0, readByte); //1024개 단위이므로 마지막 읽은 바이트 계산해야함
-														//0, readByte적지않고 buffer만 적으면 1024단위로 계산해서 파일용량이 커지거나 깨짐
+														 //0, readByte적지않고 buffer만 적으면 1024단위로 계산해서 파일용량이 커지거나 깨짐
 			}
 			os.flush(); 
 			

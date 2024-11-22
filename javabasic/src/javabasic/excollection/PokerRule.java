@@ -159,11 +159,11 @@ public class PokerRule {
 				numList.add(num); 
 		}
 		
-		if (numList.get(6) == 11) return"J";
-		else if (numList.get(6) == 12) return"Q";
-		else if (numList.get(6) == 13) return"K";
-		else if (numList.get(6) == 14) return"A";
-		return null;
+		if (numList.get(6) == 11) return "J";
+		else if (numList.get(6) == 12) return "Q";
+		else if (numList.get(6) == 13) return "K";
+		else if (numList.get(6) == 14) return "A";
+		else return (numList.get(6).toString());
 
 	}
 	

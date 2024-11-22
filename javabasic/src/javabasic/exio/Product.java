@@ -17,7 +17,7 @@ public class Product implements Serializable{
 	
 	@Override
 	public String toString() {
-		return super.toString();
+		return name+ ", " + serialNum + ", " + price;
 	}
 	
 	

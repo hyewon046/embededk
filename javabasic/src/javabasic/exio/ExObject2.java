@@ -22,7 +22,7 @@ public class ExObject2 {
 		snack.add("포카칩");
 		snack.add("꼬북칩");
 		
-		Shop shop = new Shop("편의점", snack, new Product("계란과자", "48259809", 2500));
+		Shop shop = new Shop("편의점", snack);
 		
 		try {
 			oos = new  ObjectOutputStream(new FileOutputStream(file));

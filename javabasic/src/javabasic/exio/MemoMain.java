@@ -22,8 +22,6 @@ public class MemoMain {
 			String str = sc.next();
 			ois.writeUTF(str);
 			
-			if (str.equals("1")) System.out.println();
-			
 			
 			
 			

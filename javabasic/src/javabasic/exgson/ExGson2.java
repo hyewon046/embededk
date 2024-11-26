@@ -38,6 +38,7 @@ public class ExGson2 {
 		String userStr = "";
 		String line = "";
 		
+		
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		
 		List <User> userList = gson.fromJson("", List.class);

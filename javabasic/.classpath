@@ -7,5 +7,7 @@
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="D:/embededk/lib/gson-2.11.0.jar"/>
+	<classpathentry kind="lib" path="D:/embededk/lib/activation-1.1.1.jar"/>
+	<classpathentry kind="lib" path="D:/embededk/lib/javax.mail-1.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

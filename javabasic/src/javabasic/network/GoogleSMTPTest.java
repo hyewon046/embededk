@@ -59,7 +59,7 @@ public class GoogleSMTPTest {
 			);
 			
 			//이메일 제목
-			message.setSubject("구글에스엠티피테스트용메일");
+			message.setSubject("구글에스엠티피테스트용메일발송");
 			//이메일 내용
 			message.setText("안녕하심니까, 오늘은 11월 27일이고 첫눈인데 폭설이 내립니다.");
 			//이메일 발송

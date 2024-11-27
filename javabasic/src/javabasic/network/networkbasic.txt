@@ -10,7 +10,7 @@
 -데이터의 신뢰도를 보장하는 반면 속도가 UDP보다 느림
 -HTTP, FTP 등 다른 하위 프로토콜의 상위 프로토콜
 -1:1 신뢰성 있는 통신에 많이 사용되는 프로토콜
--연결지향형 프로토콜 : 서로 연결된 상태에서 데이터를 송/수신 (Stateful)
+-연결지향형 프로토콜 : 서로 연결된 상태에서 데이터를 송/수신 (stateful)
 -TCP에서 데이터단위는 Packet
 -Packet 은 Header 와 Body 로 구성
 
@@ -27,7 +27,7 @@
 * HTTP (Hyper Text Transfer Protocol)
 -하이퍼텍스트(웹링크) 전송을 위해 설계된 프로토콜
 -TCP의 하위프로토콜
--비연결지향형 프로토콜 : 연결 > 데이터송신 > 연결끊음, 연결 > 데이터송신 > 연결끊음 ... (Stateless)
+-비연결지향형 프로토콜 : 연결 > 데이터송신 > 연결끊음, 연결 > 데이터송신 > 연결끊음 ... (stateless)
 
 * HTTPS (Hyper Text Transfer Protocol Secure)
 -HTTP에 보안기능을 강화한 프로토콜

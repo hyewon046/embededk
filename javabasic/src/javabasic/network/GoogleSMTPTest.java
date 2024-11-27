@@ -31,7 +31,7 @@ public class GoogleSMTPTest {
 		String password = "mrjd yvqr ogze dnbg"; //앱 비밀번호
 		
 		//SMTP 서버 설정
-		Properties props = new Properties(); //맵인데 키랑 밸류가 다 string이라 설정 정보 넣기 좋음
+		Properties props = new Properties(); //맵인데 키랑 밸류가 다 String이라 설정 정보 넣기 좋음
 		props.put("mail.smtp.auth", "true"); //SMTP 서버 인증 여부
 		props.put("mail.smtp.starttls.enable", "true"); //TLS서비스 사용 여부
 		props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP 서버

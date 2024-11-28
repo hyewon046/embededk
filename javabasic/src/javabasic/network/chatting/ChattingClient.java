@@ -13,7 +13,7 @@ import java.util.function.Consumer;
 public class ChattingClient {
 	
 	//사용자아이디
-	private id;
+	private String id;
 	
 	//서버와 송수신하기 위한 클라이언트 소켓
 	private Socket clientSocket;
@@ -45,6 +45,10 @@ public class ChattingClient {
 			
 			//Consumer
 			this.onMessageReceived = onMessageReceived;
+			
+			System.out.println("사용하실 아이디를 입력해 주세요!");
+			Scanner scanner = new Scanner(System.in);
+			id = scanner.nextLine();
 				
 		} catch (IOException ioe) {
 			ioe.printStackTrace();

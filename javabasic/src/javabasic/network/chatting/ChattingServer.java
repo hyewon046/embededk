@@ -28,7 +28,7 @@ public class ChattingServer {
 			//클라이언트 연결요청 대기
 			//연결요청이 오면 클라이언트소켓과 데이터 송수신하는 서버소켓을 생성 
 			Socket serverSocket = connectSocket.accept();
-			System.out.println("클라이언트가 접속 : " + serverSocket);
+			System.out.println("클라이언트 접속 : " + serverSocket);
 			
 			//클라이언트핸들러 생성
 			//클라이언트마다 다른 클라이언트들과 데이터 송수신할 수 있도록 클라이언트핸들러 생성

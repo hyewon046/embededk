@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 //역할 : 동시에 클라이언트들과 데이터를 송수신 처리하는 쓰레드
@@ -41,6 +43,9 @@ public class ClientHandler implements Runnable{
 	
 	@Override
 	public void run() {
+		
+		SimpleDateFormat sdf
+		 = new SimpleDateFormat("[HH:mm:ss]");
 		try {
 			//클라이언트에게서 받은 문자열을 저장할 변수
 			String inputLine;
@@ -48,6 +53,7 @@ public class ClientHandler implements Runnable{
 			while ((inputLine = in.readLine()) !=null) {
 				//전체 클라이언트에게 메세지를 전송
 				for (ClientHandler clientHandler : clients) {
+					clientHandler.out.println(sdf.format(new Date()));
 					clientHandler.out.println(inputLine);
 				}
 				

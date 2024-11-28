@@ -6,10 +6,14 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.Date;
 import java.util.Scanner;
 import java.util.function.Consumer;
 
 public class ChattingClient {
+	
+	//사용자아이디
+	private id;
 	
 	//서버와 송수신하기 위한 클라이언트 소켓
 	private Socket clientSocket;
@@ -51,7 +55,7 @@ public class ChattingClient {
 	
 	//클라이언트에서 서버로 문자열 전송 메소드
 	public void sendMessage(String msg) {
-		out.println(msg);
+		out.println("[" + id + "]"+msg);
 	}
 	
 	//서버에서 클라이언트에 전송하는 문자열을 수신하는 스레드를 포함하는 메소드
@@ -77,9 +81,12 @@ public class ChattingClient {
 	}
 	
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("아이디를 입력해주세요!");
+		String id = sc.next();
 		//ChattingClient 객체 생성
 		ChattingClient chattingClient = new ChattingClient(
-				"192.168.8.254",
+				"192.168.8.7",
 				5000,
 				message -> { //람다(Lambda)메소드 : 일회용 이름없는 메소드
 					System.out.println("서버로부터 받은 문자열 : " +message);
@@ -90,12 +97,12 @@ public class ChattingClient {
 		chattingClient.startClient();
 		System.out.println("클라이언트 시작됨! 메세지를 입력해주세요! 종료(exit)");
 		
-		Scanner sc = new Scanner(System.in);
 		while(true) {
-			String inputStr = sc.nextLine();
+			String inputStr =sc.nextLine();
+			
 			if (inputStr.equalsIgnoreCase("exit")) {
 				System.out.println("채팅을 종료합니다.");
-				break;
+				System.exit(0);
 			}
 			//서버에 입력받을 문자열을 전송
 			chattingClient.sendMessage(inputStr);

@@ -40,7 +40,7 @@ public class ExMemopad1self extends JFrame{
 		
 		
 		
-		
+		this.memoTextArea = new JTextArea();
 		
 		//하단 버튼 추가
 		JPanel buttonPanel = new JPanel();

@@ -9,7 +9,7 @@ public class Memo {
 	public Memo() {
 	}
 
-	public Memo(String subject, String content, int no) {
+	public Memo(int no, String subject, String content) {
 		this.no = no;
 		this.subject = subject;
 		this.content = content;
@@ -41,7 +41,7 @@ public class Memo {
 
 	@Override
 	public String toString() {
-		return "Memo [no=" + no + ", subject=" + subject + ", content=" + content + "]";
+		return "[" + (no+1) + "]" + subject;
 	}
 	
 	

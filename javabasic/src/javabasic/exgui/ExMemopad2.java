@@ -11,13 +11,13 @@ import java.awt.*;
  * - 메모 등록, 수정, 삭제 기능 포함
  * - Java GUI 실습용
  */
-public class ExMemopad1 extends JFrame {
+public class ExMemopad2 extends JFrame {
     // 메모 데이터를 저장하는 리스트
-    private final DefaultListModel<String> memoListModel;
-    private final JList<String> memoList;
+    private final DefaultListModel<Memo> memoListModel;
+    private final JList<Memo> memoList;
     private final JTextArea memoTextArea;
 
-    public ExMemopad1() {
+    public ExMemopad2() {
         // 프레임 설정
         setTitle("메모장 프로그램");
         setSize(600, 400);
@@ -29,10 +29,16 @@ public class ExMemopad1 extends JFrame {
         memoList = new JList<>(memoListModel);
         memoList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         JScrollPane listScrollPane = new JScrollPane(memoList);
+        
 
         // 우측: 메모 내용 패널
-        memoTextArea = new JTextArea();
+        JPanel mainPanel = new JPanel();
+        memoTextArea = new JTextArea("내용 입력");
         JScrollPane textScrollPane = new JScrollPane(memoTextArea);
+        JTextField tfSubject = new  JTextField("제목 입력");
+        mainPanel.add(tfSubject, BorderLayout.NORTH);
+        mainPanel.add(textScrollPane, BorderLayout.CENTER);
+        
 
         // 하단: 버튼 패널
         JPanel buttonPanel = new JPanel();
@@ -99,7 +105,7 @@ public class ExMemopad1 extends JFrame {
        
         // 프레임에 구성요소 추가
         add(listScrollPane, BorderLayout.WEST);
-        add(textScrollPane, BorderLayout.CENTER);
+        add(mainPanel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
         add(menubar, BorderLayout.NORTH);
 
@@ -182,3 +188,4 @@ public class ExMemopad1 extends JFrame {
         SwingUtilities.invokeLater(ExMemopad1::new);
     }
 }
+

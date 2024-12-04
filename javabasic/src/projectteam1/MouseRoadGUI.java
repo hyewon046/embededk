@@ -3,6 +3,7 @@ package projectteam1;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
@@ -19,7 +20,9 @@ import javabasic.exgui.ExMemopad1;
 // 게임 GUI
 public class MouseRoadGUI extends JFrame{
 	
-	 public static void main(String[] args) {
+	 private static final int CENTER = 0;
+
+	public static void main(String[] args) {
 
 	      // 프레임만들기
 	      JFrame frame = new JFrame("Mouse Road");
@@ -29,52 +32,62 @@ public class MouseRoadGUI extends JFrame{
 
 	      // 프레임 크기 설정
 	      // JFrame 사이즈
-	      frame.setSize(700, 900);
+	      frame.setSize(800, 1000);
 
 	      // 큰 패널 만들기
 	      JPanel basicPanel = new JPanel();
 	      // 상단 고정 패널 (랭킹, 타이머, 로고 틀)
 	      JPanel topPanel = new JPanel(new BorderLayout());
-	      topPanel.setPreferredSize(new Dimension(700, 150)); // 크기 설정
+	      topPanel.setPreferredSize(new Dimension(800, 150)); // 크기 설정
 
 	      // [Ranking] 왼쪽 패널
 	      JPanel leftPanel = new JPanel();
-	      leftPanel.setPreferredSize(new Dimension(200, 150));
+	      leftPanel.setPreferredSize(new Dimension(300, 150));
 	      leftPanel.setBackground(new Color(200, 200, 255));
 	      leftPanel.add(new JLabel("Ranking"));
 	      //leftPanel.setBorder(BorderFactory.createLineBorder(Color.RED, 5)); // 테두리
 	      topPanel.add(leftPanel, BorderLayout.WEST);
 
-	      // [Timer] 가운데 패널
-	      JPanel centerPanel = new JPanel();
-	      centerPanel.setPreferredSize(new Dimension(300, 125));
-	      
-	      TimeNum timer = new TimeNum(90); // 90초
-	        timer.setBounds(250, 50, 100, 50); // 위치와 크기 설정
-	        centerPanel.add(timer);
-
-	        Thread timerThread = new Thread(timer);
-	        timerThread.start();
-	        
-	        topPanel.add(centerPanel, BorderLayout.CENTER);
-
 	      // [Logo] 오른쪽 패널
 	      JPanel rightPanel = new JPanel();
-	      rightPanel.setPreferredSize(new Dimension(200, 150));
+	      rightPanel.setPreferredSize(new Dimension(300, 150));
 	      rightPanel.setBackground(new Color(200, 255, 200));
 	      rightPanel.add(new JLabel("Logo"));
 	      topPanel.add(rightPanel, BorderLayout.EAST);
+	      
+	      // [Timer] 가운데 패널
+	      JPanel centerPanel = new JPanel();
+	      centerPanel.setPreferredSize(new Dimension(400, 125));
+	      
+	      TimeNum timerNum = new TimeNum(40); // 40초
+	      timerNum.setBounds(250, 50, 100, 50); // 위치와 크기 설정
+	      timerNum.setHorizontalAlignment(CENTER); // 텍스트 중앙 정렬
+	      timerNum.setFont(new Font("맑은 고딕",Font.BOLD, 60)); 
+	      
+	      centerPanel.add(timerNum);
+
+	      topPanel.add(centerPanel, BorderLayout.CENTER);
 
 	      // [Timer Bar] 가운데 패널 아래 직사각 패널
 	      JPanel bottomPanel = new JPanel();
-	      bottomPanel.setPreferredSize(new Dimension(300, 25)); // 긴 직사각형 패널 크기
-	      bottomPanel.setBackground(new Color(200, 255, 100)); // 색상 설정
-	      bottomPanel.add(new JLabel("Time Bar"));
+	      bottomPanel.setPreferredSize(new Dimension(800, 30)); 
+	      bottomPanel.setLayout(null);
+
+	      int second = 40;
+	      TimeBar timebar = new TimeBar(second);
 	      
+	      bottomPanel.add(timebar);
+
+	      Thread barThread = new Thread(timebar);
+	      Thread numThread = new Thread(timerNum);
+	     
+	      barThread.start();
+	      numThread.start();
 	      
-	      topPanel.add(bottomPanel, BorderLayout.AFTER_LAST_LINE);
+	      topPanel.add(bottomPanel, BorderLayout.SOUTH);
 
 	      basicPanel.add(topPanel, BorderLayout.NORTH);
+	      
 	      
 	      frame.add(basicPanel); // 상단 패널
 	      frame.setVisible(true);

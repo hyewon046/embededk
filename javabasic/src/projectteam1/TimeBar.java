@@ -6,8 +6,8 @@ import javax.swing.JLabel;
 
 public class TimeBar extends JLabel implements Runnable {
 	
-	int width = 600, height = 30;
-	int x = 20, y=130;
+	int width = 700, height = 25;
+//	int x = 20, y=130;
 	Color color = Color.RED;
 	
 	int second;
@@ -15,7 +15,7 @@ public class TimeBar extends JLabel implements Runnable {
 	public TimeBar(int second) {
 		setOpaque(true); //불투명도 (true를 선택하면 배경이 보이게함)
 		setBackground(color);
-		setBounds(x,y,width,height); //위치, 크기 조정
+		setSize(width,height); //위치, 크기 조정
 		this.second = second;
 	}
 
@@ -30,7 +30,7 @@ public class TimeBar extends JLabel implements Runnable {
 			}
 			if (getWidth() > 0) {
 				width -= 1;
-				setBounds(x,y,width, height);	
+				setSize(width, height);	
 			} else System.out.println("시간 종료!"); 
 
 		}

@@ -1,4 +1,4 @@
-package projectteam1;
+package newprojectteam1;
 
 // 맵 모양, 경로설정
 public class MapData {

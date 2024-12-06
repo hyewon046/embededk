@@ -6,15 +6,15 @@ public class Block {
 	
 	private int x;
 	private int y;
-	private Color color;
-	private boolean block;
+	private Color Bgcolor;
+	private boolean pathYN;
 	
 
-	public Block(int x, int y) {
+	public Block(int x, int y, boolean pathYN) {
 		this.x = x;
 		this.y = y;
-		this.color = color.BLACK;
-		this.block = true;
+		this.Bgcolor = pathYN == true ? Bgcolor.WHITE : Bgcolor.BLACK;
+		this.pathYN = pathYN;
 	}
 
 	public int getX() {
@@ -33,25 +33,20 @@ public class Block {
 		this.y = y;
 	}
 
-	public Color getColor() {
-		return color;
+	public Color getBgColor() {
+		return Bgcolor;
 	}
 
-	public void setColor(Color color) {
-		this.color = color;
+	public void setBgColor(Color color) {
+		this.Bgcolor = Bgcolor;
 	}
 
-	public boolean isBlock() {
-		return block;
+	public boolean ispathYN() {
+		return pathYN;
 	}
 
-	public void setBlock(boolean block) {
-		this.block = block;
-	}
-
-	@Override
-	public String toString() {
-		return "Block [x=" + x + ", y=" + y + ", color=" + color + ", block=" + block + "]";
+	public void setpathYN(boolean pathYN) {
+		this.pathYN = pathYN;
 	}
 
 }

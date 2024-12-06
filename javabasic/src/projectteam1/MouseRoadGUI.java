@@ -20,8 +20,7 @@ import javax.swing.JPanel;
 
 import projectteam1.Block;
 import projectteam1.MapLoader;
-import projectteam11.TimeBar;
-import projectteam11.TimeNum;
+
 
 public class MouseRoadGUI extends JFrame implements MouseListener, MouseMotionListener {
 	

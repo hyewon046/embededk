@@ -23,7 +23,7 @@ public class TimeBar extends JLabel implements Runnable {
 		int decrease = (startTime * 1000) / width; // 초당 몇번의 작업을 해야하는지 밀리초로 변환
 		while (width > 0) {
 			try {
-				Thread.sleep(decrease - 1);
+				Thread.sleep(decrease);
 				width -= 1;
 //							setSize(width, height);	
 				revalidate(); // 동적 변화를 시켰을때 계속 갱신하여 재생성할 수 있게 만드는 메소드

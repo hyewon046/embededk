@@ -1,4 +1,4 @@
-package projectteam1;
+package javaprojectteam1;
 
 // 게임맵 
 //벽, 길

@@ -2,7 +2,7 @@ package projectteam11;
 
 import javax.swing.SwingUtilities;
 
-import projectteam1.MouseRoadGUI;
+import javaprojectteam1.MouseRoadGUI;
 
 public class MouseRoadMain {
 	

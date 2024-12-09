@@ -22,15 +22,20 @@ public class MouseRoadGUI {
 
 	Thread timerThread;
 	Thread threadbar;
-	Sound sound;
 	Thread soundThread;
-	int timeLeft = 40; // 남은 시간 (초 단위)
+	int timeLeft = 20; // 남은 시간 (초 단위)
 
 	boolean gameRunning = false;
 
 	MouseRoadLogic logic = new MouseRoadLogic();
 
 	public MouseRoadGUI() {
+		
+		// 사운드 쓰레드 만들고 실행
+		Sound sound = new Sound();
+		soundThread = new Thread(sound);
+		soundThread.start();
+		System.out.println("노래재생");
 		
 		JFrame frame = new JFrame("Mouse Road"); // 프레임만들기
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // X버튼 누르면 닫히도록 설정
@@ -60,7 +65,7 @@ public class MouseRoadGUI {
 		JPanel centerPanel = new JPanel();
 		centerPanel.setPreferredSize(new Dimension(400, 125));
 
-		TimeNum timer = new TimeNum(40);
+		TimeNum timer = new TimeNum(20);
 		timerThread = new Thread(timer);
 		timer.setBounds(250, 50, 100, 50); // 위치와 크기 설정
 		
@@ -80,11 +85,6 @@ public class MouseRoadGUI {
 		topPanel.add(bottomPanel, BorderLayout.AFTER_LAST_LINE);
 
 		basicPanel.add(topPanel, BorderLayout.NORTH);
-		
-		//사운드 쓰레드 만들고 실행
-		soundThread = new Thread(sound);
-		soundThread.start();
-		System.out.println("노래재생");
 
 		// 맵로더에서 인덱스 0번의 맵을 호출
 		MapLoader mapLoader = new MapLoader();
@@ -125,7 +125,7 @@ public class MouseRoadGUI {
 			if (!gameStarted) { // 게임 시작 누를때마다 스레드 새로 시작
 				gameStarted = true;
 
-				timer.reset(40);
+				timer.reset(20);
 
 				if (timerThread == null || !timerThread.isAlive()) {
 					timerThread = new Thread(timer);

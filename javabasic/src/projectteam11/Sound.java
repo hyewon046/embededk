@@ -1,7 +1,9 @@
 package projectteam11;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
+import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.Player;
 
 public class Sound implements Runnable{
@@ -14,14 +16,12 @@ public class Sound implements Runnable{
 	           
 	            // JLayer Player 객체 생성
 	            Player mp3Player = new Player(fis);
-
-	            System.out.println("노래 재생 중...");
 	            mp3Player.play(); // MP3 파일 재생
-
-	        } catch (Exception e) {
-	        	Thread.interrupted();
-	            System.err.println("노래 정지");
-	        } 
+	        } catch (JavaLayerException jle) {
+	        	jle.printStackTrace();
+	        } catch (FileNotFoundException fnfe) {
+	        	fnfe.printStackTrace();
+	        }
 		
 	}
     

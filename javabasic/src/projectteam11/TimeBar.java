@@ -20,12 +20,13 @@ public class TimeBar extends JLabel implements Runnable {
 
 	@Override
 	public void run() {
-		int decrease = (second*1000)/width; // 초당 몇번의 작업을 해야하는지 밀리초로 변환
+		double decrease = (second/width); // 초당 몇번의 작업을 해야하는지 밀리초로 변환
 		while (width > 0) {
 			try {
-				Thread.sleep(decrease);
+				Thread.sleep((int)(1000/decrease));
 				width -= 1;
 				setSize(width, height);
+				System.out.println("타임바");
 				revalidate(); // 동적 변화를 시켰을때 계속 갱신하여 재생성할 수 있게 만드는 메소드
 				repaint(); // 컴포넌트를 다시 그리도록 하는 메소드
 			} catch (InterruptedException ie) {

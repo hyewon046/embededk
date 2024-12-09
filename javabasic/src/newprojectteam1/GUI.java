@@ -18,8 +18,8 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import projectteam1.Block;
-import projectteam1.MapLoader;
+import javaprojectteam1.Block;
+import javaprojectteam1.MapLoader;
 
 
 public class GUI extends JFrame implements MouseListener, MouseMotionListener {

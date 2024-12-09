@@ -1,9 +1,9 @@
-package projectteam1;
+package javaprojectteam1;
 
 // 맵 모양, 경로설정
 public class MapData {
 
-	private MouseRoadMap mrm = new MouseRoadMap(28,27);
+	private MouseRoadMap mrm = new MouseRoadMap(29, 28);
 
 	private int row = mrm.getSizex(); // 행
 	private int col = mrm.getSizey(); // 열
@@ -15,7 +15,7 @@ public class MapData {
 	public MapData() {
 
 		wall = new Wall();
-		
+
 		int rowSize = gameMap.length;
 		int colSize = gameMap[0].length;
 
@@ -26,6 +26,7 @@ public class MapData {
 			}
 		}
 
+		// 벽
 		int pathRowSize = wall.getWallArr().length;
 
 		for (int i = 0; i < pathRowSize; i++) {

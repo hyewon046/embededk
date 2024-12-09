@@ -1,10 +1,10 @@
-package projectteam1;
+package javaprojectteam1;
 
 import java.awt.Color;
 
 import javax.swing.JButton;
 
-public class Block extends JButton{
+public class Block{
 
 	private int x; // 가로
 	private int y; // 세로
@@ -49,5 +49,5 @@ public class Block extends JButton{
 	public void setPathYN(boolean pathYN) {
 		this.pathYN = pathYN;
 	}
-
+	
 }

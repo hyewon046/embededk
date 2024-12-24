@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-// 실습 1 ) 이니셜 계정의 STUDENT 테이블
+// 실습 1 ) 이니셜 계정의 STUDENT 테이블 -- URL은 같지만 계정은 바꿔주어야함
 //           PreparedStatement 사용 CRUD(Insert > Update > Delete > Select 순)
 public class ExJDBC1 {
 

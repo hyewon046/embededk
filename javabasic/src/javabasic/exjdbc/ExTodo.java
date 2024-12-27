@@ -59,7 +59,7 @@ public class ExTodo {
 		printList();
 	}
 	
-	private static void insertTodo(TODO todo) throws SQLException {
+	private static void insertTodo (TODO todo) throws SQLException {
 		String sql = " insert into todo values(todo_seq.nextval, sysdate, ?, ?, ?) ";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, todo.getTdwriter());
@@ -67,17 +67,17 @@ public class ExTodo {
 		pstmt.setString(3, todo.getTdyn());
 	}
 	
-	private static void deleteTodo(TODO todo) throws SQLException {
+	private static void deleteTodo (String tdno) throws SQLException {
 		String sql = " delete todo where tdno = ? ";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, todo.getTdno());
+		pstmt.setString(1, tdno);
 		pstmt.executeUpdate();
 	}
 	
-	private static void updateTodo(TODO todo) throws SQLException {
+	private static void updateTdyn (String tdno) throws SQLException {
 		String sql = " update todo set tdyn = 'Y  where tdno = ? ";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, todo.getTdno());
+		pstmt.setString(1, tdno);
 		pstmt.executeUpdate();
 	}
 	
@@ -100,6 +100,41 @@ public class ExTodo {
 		System.out.println("####################################");
 		System.out.println("   메뉴(1.목록 2.등록 3. 삭제 4. 완료처리 5. 종료)를 선택해주세요!     ");
 		System.out.println("####################################");
+		Scanner scanner = new Scanner(System.in);
+		switch (scanner.nextLine()) {
+			case "1": selectTodoList(); break;
+			case "2": {
+				System.out.println("작성자이름과 내용을 입력해 주세요! (형식:홍길동,바벨2000회)");
+				String inputStr = new Scanner(System.in).nextLine();
+				TODO todo = new TODO(
+					0, 
+					null, 
+					inputStr.substring(0, inputStr.indexOf(",")),
+					inputStr.substring(inputStr.indexOf(",") + 1),
+					"N"
+				);
+				insertTodo(todo);
+				selectTodoList();
+			}
+			case "3": {
+				System.out.println("삭제하실 TODO 번호를 입력해 주세요!");
+				deleteTodo (new Scanner(System.in).nextLine());
+				selectTodoList();
+			}
+			case "4": {
+				System.out.println("완료처리하실 TODO 번호를 입력해 주세요!");
+				updateTdyn (new Scanner(System.in).nextLine());
+				selectTodoList();
+				printList();				
+			}
+			case "5": exitProgram();
+		}
+		scanner.close();
+	}
+	
+	private static void exitProgram() {
+		System.out.println("프로그램을 종료합니다!");
+		System.exit(0);
 	}
 	
 
